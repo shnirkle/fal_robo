@@ -1,0 +1,54 @@
+===== Flucht aus dem Labyrinth: Projektplanung =====
+
+===Einführung===
+
+//Ein Roboter. Eine Verlassene Landschaft. Eine Straße. Ein Weg.
+Die Räder beginnen sich zu drehen. Quietschendes Gummi.
+Staub. Der Roboter durchbicht die Schallgrenze.
+oh.... eine Sackgasse, verflixtes Labyrinth!//
+
+Ziel dieses Projektes ist es einen Roboter zu bauen,
+der fahren kann und eigenständig versucht aus einem Labyrinth zu entkommen.
+Das Labyrinth wird aus schwarzen Linien auf weißem Untergrund bestehen. Auf diesen Linien soll der Roboter fahren.
+Der Ausgang des Labyrinthes wird mit einer Anderen Farbe gekennzeichnet.
+
+{{:projektesose22:flucht:labyrinth_scematic.png| Labyrinth}}
+
+//Blau: Roboter, Rot: Ziel//
+
+===Ziele und Prioritäten===
+
+    *Was muss der Roboter können
+        *Bewegung durch zwei parallel montierte Räder.
+        *Erkennung von Linien mit der Hilfe einer am Roboter befestigten Kamera.
+        *Knotenpunkte erkennen.
+        *Bewegung auf erkannten Linien.
+        *enden und zum Letzten Knotenpunkt fahren
+        *Ziel erkennen
+    *Was sollte der Roboter können
+        *Zwischenspeicherung des Weges
+    *Was wäre nett?
+        *Beleuchtung
+
+===Schritte des Lebenszyklus===
+
+{{:projektesose22:flucht:unbenanntes_diagramm.jpg|}}
+
+===Teilaufgaben und Arbeitspakete===
+
+{{:projektesose22:flucht:projektstrukturplan.jpeg|}}
+
+
+===Materialien===
+
+    *Leistungsfähiger Microcontroller
+    *Kamera
+    *Schrittmotoren
+    *Räder
+    *Fahrgestell
+    *Klebeband
+
+
+===Gantt-Diagramm===
+
+{{:projektesose22:flucht:projektplanung.png|}}
