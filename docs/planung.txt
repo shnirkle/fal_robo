@@ -1,6 +1,6 @@
 ===== Flucht aus dem Labyrinth: Projektplanung =====
 
-===Einführung===
+==== Einführung ====
 
 //Ein Roboter. Eine Verlassene Landschaft. Eine Straße. Ein Weg.
 Die Räder beginnen sich zu drehen. Quietschendes Gummi.
@@ -16,7 +16,7 @@ Der Ausgang des Labyrinthes wird mit einer Anderen Farbe gekennzeichnet.
 
 //Blau: Roboter, Rot: Ziel//
 
-===Ziele und Prioritäten===
+==== Ziele und Prioritäten ====
 
     *Was muss der Roboter können
         *Bewegung durch zwei parallel montierte Räder.
@@ -30,16 +30,16 @@ Der Ausgang des Labyrinthes wird mit einer Anderen Farbe gekennzeichnet.
     *Was wäre nett?
         *Beleuchtung
 
-===Schritte des Lebenszyklus===
+==== Schritte des Lebenszyklus ====
 
 {{:projektesose22:flucht:unbenanntes_diagramm.jpg|}}
 
-===Teilaufgaben und Arbeitspakete===
+==== Teilaufgaben und Arbeitspakete ====
 
 {{:projektesose22:flucht:projektstrukturplan.jpeg|}}
 
 
-===Materialien===
+==== Materialien ====
 
     *Leistungsfähiger Microcontroller
     *Kamera
@@ -49,6 +49,15 @@ Der Ausgang des Labyrinthes wird mit einer Anderen Farbe gekennzeichnet.
     *Klebeband
 
 
-===Gantt-Diagramm===
+==== Gantt-Diagramm ====
 
 {{:projektesose22:flucht:projektplanung.png|}}
+
+
+<note important>
+Gute Einführung, Ziele, die Skizze ist super (und generell gute anschauliche Abbildungen). Die Beschreibung der Teilaufgaben und Arbeitspakete ("Wie wollen wir die eine oder andere Funktion umsetzen?") im Fließtext fehlt leider. S. auch [[orga:projektplanung|Hinweise zur Projektplanung]] und die dort verlinkten Beispiele, z.B. [[projektewise18:roboship:plan|Beispiel 1]], [[projektewise18:wall-e:planung|Beispiel 2]]
+Das Gantt-Diagramm ist in Ordnung. 
+
+Bitte verschiebt die Projektplanung auf eine Unterseite, die ihr neu anlegt. Auf eine zweite Unterseite kommt später die Dokumentation.
+
+</note>
