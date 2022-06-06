@@ -28,7 +28,7 @@ class Classifier:
         self.hlines = []
         for line in self.lines.tolist():
             x1, y1, x2, y2 = line[0]
-            if x2 - x1 < y2 - y1:
+            if abs(x2 - x1) < abs(y2 - y1):
                 self.vlines.append(line[0])
             else:
                 self.hlines.append(line[0])
