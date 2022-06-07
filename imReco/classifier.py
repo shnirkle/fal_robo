@@ -45,7 +45,7 @@ class Classifier:
         branches = []
 
         if len(self.hlines) == 0:
-            self.vlines.sort(key=lambda x: x[3])
+            self.vlines.sort(key=lambda x: x[3], reverse=True)
             if self.vlines[0][3] < IMHEIGHT / 2:
                 return [3]
             return [1]
@@ -63,8 +63,8 @@ class Classifier:
         if self.vlines[-1:][0][3] < self.hlines[-1:][0][3]:  # check if right branch exists
             branches.append(2)
 
-        self.vlines.sort(key=lambda x: x[3])
-        self.hlines.sort(key=lambda x: x[3])
+        self.vlines.sort(key=lambda x: x[3], reverse=True)
+        self.hlines.sort(key=lambda x: x[3], reverse=True)
 
         if self.hlines[0][3] < self.vlines[0][3]:  # check if path continues forward
             branches.append(1)
