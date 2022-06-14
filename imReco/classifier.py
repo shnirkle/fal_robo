@@ -19,7 +19,8 @@ class Classifier:
         self.hlines = None  # horizontal lines
 
     def findLines(self):
-        grayImg = cv.cvtColor(self.frame, cv.COLOR_BGR2GRAY)
+        bil = cv.bilateralFilter(self.frame, 9, 75, 75)
+        grayImg = cv.cvtColor(bil, cv.COLOR_BGR2GRAY)
         edges = cv.Canny(grayImg, 50, 150, apertureSize=3)
         self.lines = cv.HoughLinesP(edges, 1, np.pi/180, 100, minLineLength=10, maxLineGap=200)
 
