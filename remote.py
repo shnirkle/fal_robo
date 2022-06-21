@@ -1,7 +1,7 @@
 import sys
 from controller import Controller
 
-default_steps = 5
+default_steps = 200
 control = Controller()
 
 print(sys.argv)
@@ -10,7 +10,7 @@ if len(sys.argv) < 2:
     print("Using default number of steps: ", default_steps)
     print("To specify the number of steps run: python3 remote.py <number_of_steps>")
 else:
-    steps = sys.argv[1]
+    steps = int(sys.argv[1])
     print("Number of steps was specified to be: ", sys.argv[1])
 
 for i in range(100000):
