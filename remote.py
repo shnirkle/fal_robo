@@ -1,5 +1,6 @@
 import sys
 from controller import Controller
+import RPi.GPIO as GPIO
 
 default_steps = 200
 control = Controller()
@@ -14,14 +15,18 @@ else:
     print("Number of steps was specified to be: ", sys.argv[1])
 
 for i in range(100000):
-    inp = input()
-    if inp == "w":
-        control.step_forward(steps)
-    elif inp == "s":
-        control.step_backwards(steps)
-    elif inp == "a":
-        control.rotate_counterclockwise(steps)
-    elif inp == "d":
-        control.rotate_clockwise(steps)
-    else:
-        print(inp, " is not a valid input. Use w, a, s, d to control the robot.")
+    try:
+        inp = input()
+        if inp == "w":
+            control.step_forward(steps)
+        elif inp == "s":
+            control.step_backwards(steps)
+        elif inp == "a":
+            control.rotate_counterclockwise(steps)
+        elif inp == "d":
+            control.rotate_clockwise(steps)
+        else:
+            print(inp, " is not a valid input. Use w, a, s, d to control the robot.")
+    except KeyboardInterrupt:
+        GPIO.cleanup()
+        exit()
