@@ -8,11 +8,11 @@ Provides functions to control the robots movements.
 
 class Controller:
     def __init__(self):
-        self.enable_pin = 0
-        self.step_pin1 = 1
-        self.step_pin2 = 8
-        self.dir_pin1 = 7
-        self.dir_pin2 = 25
+        self.enable_pin = 2
+        self.step_pin1 = 22
+        self.step_pin2 = 24
+        self.dir_pin1 = 27
+        self.dir_pin2 = 23
         self.mode_pin = 20
         self.stepper1 = StepperMotor(self.enable_pin,
                                      self.step_pin1,
