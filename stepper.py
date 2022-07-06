@@ -28,3 +28,16 @@ class StepperMotor:
             sleep(self.delay)
             GPIO.output(self.step_pin, GPIO.LOW)
             sleep(self.delay)
+
+
+def run_steppers(steps, delay=.0005, *steppers):
+    for stepper in steppers:
+        GPIO.output(stepper[0].dir_pin, stepper[1])
+    for i in range(steps):
+        for stepper in steppers:
+            GPIO.output(stepper[0].step_pin, GPIO.HIGH)
+        sleep(delay)
+        for stepper in steppers:
+            GPIO.output(stepper[0].step_pin, GPIO.LOW)
+        sleep(delay)
+

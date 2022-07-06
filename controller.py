@@ -1,3 +1,4 @@
+import stepper
 from stepper import StepperMotor
 
 """
@@ -22,24 +23,28 @@ class Controller:
 
     def step_forward(self, steps: int):
         self.stepper1.enable(True)
-        self.stepper1.run(steps, True)
-        self.stepper2.run(steps, False)
+        stepper.run_steppers(steps, ((self.stepper1), True), (self.stepper2, False))
+        # self.stepper1.run(steps, True)
+        # self.stepper2.run(steps, False)
         self.stepper1.enable(False)
 
     def step_backwards(self, steps: int):
         self.stepper1.enable(True)
-        self.stepper1.run(steps, False)
-        self.stepper2.run(steps, True)
+        stepper.run_steppers(steps, ((self.stepper1), False), (self.stepper2, True))
+        # self.stepper1.run(steps, False)
+        # self.stepper2.run(steps, True)
         self.stepper1.enable(False)
 
     def rotate_clockwise(self, steps: int):
         self.stepper1.enable(True)
-        self.stepper1.run(steps, False)
-        self.stepper2.run(steps, False)
+        stepper.run_steppers(steps, ((self.stepper1), False), (self.stepper2, False))
+        # self.stepper1.run(steps, False)
+        # self.stepper2.run(steps, False)
         self.stepper1.enable(False)
 
     def rotate_counterclockwise(self, steps: int):
         self.stepper1.enable(True)
-        self.stepper1.run(steps, True)
-        self.stepper2.run(steps, True)
+        stepper.run_steppers(steps, ((self.stepper1), True), (self.stepper2, True))
+        # self.stepper1.run(steps, True)
+        # self.stepper2.run(steps, True)
         self.stepper1.enable(False)
