@@ -2,7 +2,6 @@ import cv2 as cv
 import numpy as np
 
 
-IMHEIGHT = 480
 
 """
 This Classifier tries to find usable paths in the captured image. It is used
@@ -17,6 +16,8 @@ class Classifier:
         self.lines = None
         self.vlines = None  # vertical lines
         self.hlines = None  # horizontal lines
+        self.img_height = None
+        self.img_width = None
 
     def findLines(self):
         bil = cv.bilateralFilter(self.frame, 9, 75, 75)
@@ -47,9 +48,17 @@ class Classifier:
 
         if len(self.hlines) == 0:
             self.vlines.sort(key=lambda x: x[3], reverse=True)
-            if self.vlines[0][3] < IMHEIGHT / 2:
+            if self.vlines[0][3] < self.img_height / 2:
                 return [3]
-            return [1]
+            x_offset = self.vlines[0][0] - self.vlines[0][2]
+            if x_offset < self.img_width * 0.05:
+                return [1, 4]  # FORWARD
+            if x_offset > 0:
+                return[1, 5]  # LEFT
+            elif x_offset < 0:
+                return [1, 6]  # RIGHT
+            else:
+                return [1, 4]  # FORWARD
 
         if len(self.vlines) == 0:
             print("no vlines found")
@@ -72,9 +81,13 @@ class Classifier:
 
         return branches
 
-    def classify(self, image: object = None) -> int:
+    def classify(self, image: object = None) -> list:
+        returnarray = []
         if image is not None:
             self.frame = image
+            self.img_height = image.shape[0]
+            self.img_width = image.shape[1]
+
 
         lines = self.findLines()
         f = self.frame
@@ -83,14 +96,13 @@ class Classifier:
                 x1, y1, x2, y2 = line[0]
                 cv.line(f, (x1, y1), (x2, y2), (0, 255, 0), 2)
             self._sortLines()
-            print(self.detectBranches())
+            returnarray = self.detectBranches()
 
 
-            #cv.imwrite("lines.png", f)
+        #cv.imwrite("lines.png", f)
         cv.imshow("lines", f)
         k = cv.waitKey(5) & 0x5FF
-
-        return 1
+        return returnarray
 
 
 if __name__ == "__main__":
@@ -99,4 +111,4 @@ if __name__ == "__main__":
     #frame = cv.imread("test.png")
     for i in range(10000):
         frame = capImage()
-        clf.classify(frame)
+        print(clf.classify(frame))
