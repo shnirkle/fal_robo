@@ -100,8 +100,8 @@ class Classifier:
 
 
         #cv.imwrite("lines.png", f)
-        cv.imshow("lines", f)
-        k = cv.waitKey(5) & 0x5FF
+        #cv.imshow("lines", f)
+        #k = cv.waitKey(5) & 0x5FF
         return returnarray
 
 

@@ -6,7 +6,7 @@ This file provides necessary functions to capture images.
 
 import cv2 as cv
 
-CAMID = 2  # Device ID of the camera. Default is 0
+CAMID = 0  # Device ID of the camera. Default is 0
 
 cam = cv.VideoCapture(CAMID, cv.CAP_ANY)
 
