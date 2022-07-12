@@ -62,7 +62,7 @@ class Classifier:
 
         if len(self.vlines) == 0:
             print("no vlines found")
-            return 1
+            return [999]
 
         self.vlines.sort(key=lambda x: x[0])
         self.hlines.sort(key=lambda x: x[0])
