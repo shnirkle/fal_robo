@@ -14,9 +14,9 @@ def main():
         branches = clf.classify(frame)
         if branches[0] == 1:
             if branches[1] == 5:
-                control.rotate_clockwise(steps // 2)
+                control.rotate_clockwise(steps // 5)
             elif branches[1] == 6:
-                control.rotate_counterclockwise(steps // 2)
+                control.rotate_counterclockwise(steps // 5)
 
             control.step_forward(steps)
 
