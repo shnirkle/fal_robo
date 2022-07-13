@@ -81,6 +81,8 @@ class Classifier:
         if self.hlines[0][3] < self.vlines[0][3]:  # check if path continues forward
             branches.append(1)
 
+        if len(branches) < 1:
+            branches.append(999)
         return branches
 
     def classify(self, image: object = None) -> list:
@@ -102,10 +104,8 @@ class Classifier:
 
 
         #cv.imwrite("lines.png", f)
-<<<<<<< HEAD
         self.clsimg = f
-=======
->>>>>>> 7fee59c907653f8b78a5b19dc47907a1d7f5ab6f
+
         #cv.imshow("lines", f)
         #k = cv.waitKey(5) & 0x5FF
         return returnarray
