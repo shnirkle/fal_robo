@@ -5,11 +5,13 @@ app = Flask(__name__)
 
 CLS = None
 
+
 @app.route("/")
 def index():
     with open("static/index.html") as indexhtml:
         data = indexhtml.read()
     return data
+
 
 @app.route("/image")
 def image():
