@@ -81,12 +81,11 @@ class Classifier:
         if self.hlines[0][3] < self.vlines[0][3]:  # check if path continues forward
             branches.append(1)
 
-        if len(branches) < 1:
-            branches.append(999)
+
         return branches
 
     def classify(self, image: object = None) -> list:
-        returnarray = []
+        returnarray = [999]
         if image is not None:
             self.frame = image
             self.img_height = image.shape[0]
