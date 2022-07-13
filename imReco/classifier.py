@@ -19,6 +19,8 @@ class Classifier:
         self.img_height = None
         self.img_width = None
 
+        self.clsimg = None
+
     def findLines(self):
         bil = cv.bilateralFilter(self.frame, 9, 75, 75)
         grayImg = cv.cvtColor(bil, cv.COLOR_BGR2GRAY)
@@ -100,6 +102,10 @@ class Classifier:
 
 
         #cv.imwrite("lines.png", f)
+<<<<<<< HEAD
+        self.clsimg = f
+=======
+>>>>>>> 7fee59c907653f8b78a5b19dc47907a1d7f5ab6f
         #cv.imshow("lines", f)
         #k = cv.waitKey(5) & 0x5FF
         return returnarray
